@@ -11,6 +11,8 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class CyclicBarrierExample2 extends BaseCyclicBarrier {
 
+    private CyclicBarrier barrier = new CyclicBarrier(5);
+
     public static void main(String[] args) throws InterruptedException {
 
         BaseCyclicBarrier cyclicBarrier = new CyclicBarrierExample2();
@@ -19,8 +21,6 @@ public class CyclicBarrierExample2 extends BaseCyclicBarrier {
 
     @Override
     protected  void race(int threadNum) throws Exception {
-        CyclicBarrier barrier = new CyclicBarrier(5);
-
         Thread.sleep(1000);
         log.info("{} is ready", threadNum);
         try {
