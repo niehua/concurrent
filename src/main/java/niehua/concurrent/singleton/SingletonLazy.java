@@ -1,6 +1,7 @@
 package niehua.concurrent.singleton;
 
-import com.mmall.concurrency.annoations.NotThreadSafe;
+
+import niehua.concurrent.annoations.NotThreadSafe;
 
 /**
  * 懒汉模式

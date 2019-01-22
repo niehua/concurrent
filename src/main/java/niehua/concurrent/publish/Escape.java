@@ -1,8 +1,8 @@
 package niehua.concurrent.publish;
 
-import com.mmall.concurrency.annoations.NotRecommend;
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.NotRecommend;
+import niehua.concurrent.annoations.NotThreadSafe;
 
 @Slf4j
 @NotThreadSafe
@@ -11,14 +11,15 @@ public class Escape {
 
     private int thisCanBeEscape = 0;
 
-    public Escape () {
+    public Escape() {
         new InnerClass();
     }
 
     private class InnerClass {
 
-        //this指正逃逸
+        //this指针逃逸
         public InnerClass() {
+
             log.info("{}", Escape.this.thisCanBeEscape);
         }
     }

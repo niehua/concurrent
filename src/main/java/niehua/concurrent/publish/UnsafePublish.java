@@ -1,7 +1,7 @@
 package niehua.concurrent.publish;
 
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.NotThreadSafe;
 
 import java.util.Arrays;
 
@@ -19,6 +19,7 @@ public class UnsafePublish {
         UnsafePublish unsafePublish = new UnsafePublish();
         log.info("{}", Arrays.toString(unsafePublish.getStates()));
 
+        //修改数组的元素
         unsafePublish.getStates()[0] = "d";
         log.info("{}", Arrays.toString(unsafePublish.getStates()));
     }

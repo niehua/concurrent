@@ -1,6 +1,7 @@
 package niehua.concurrent.aqs;
 
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.base.BaseCyclicBarrier;
 
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
@@ -8,29 +9,18 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
-public class CyclicBarrierExample2 {
+public class CyclicBarrierExample2 extends BaseCyclicBarrier {
 
-    private static CyclicBarrier barrier = new CyclicBarrier(5);
+    public static void main(String[] args) throws InterruptedException {
 
-    public static void main(String[] args) throws Exception {
-
-        ExecutorService executor = Executors.newCachedThreadPool();
-
-        for (int i = 0; i < 10; i++) {
-            final int threadNum = i;
-            Thread.sleep(1000);
-            executor.execute(() -> {
-                try {
-                    race(threadNum);
-                } catch (Exception e) {
-                    log.error("exception", e);
-                }
-            });
-        }
-        executor.shutdown();
+        BaseCyclicBarrier cyclicBarrier = new CyclicBarrierExample2();
+        cyclicBarrier.execute();
     }
 
-    private static void race(int threadNum) throws Exception {
+    @Override
+    protected  void race(int threadNum) throws Exception {
+        CyclicBarrier barrier = new CyclicBarrier(5);
+
         Thread.sleep(1000);
         log.info("{} is ready", threadNum);
         try {
