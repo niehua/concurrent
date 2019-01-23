@@ -1,8 +1,9 @@
 package niehua.concurrent.atomic;
 
-import com.mmall.concurrency.annoations.ThreadSafe;
-import com.mmall.concurrency.example.base.BaseConcurrency;
+
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.ThreadSafe;
+import niehua.concurrent.base.BaseAtomic;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -11,7 +12,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 @Slf4j
 @ThreadSafe
-public class AtomicLongTest extends BaseConcurrency {
+public class AtomicLongTest extends BaseAtomic {
 
     /**
      * 工作内存
@@ -19,7 +20,7 @@ public class AtomicLongTest extends BaseConcurrency {
     public static AtomicLong count = new AtomicLong(0);
 
     public static void main(String[] args){
-        BaseConcurrency base = new AtomicLongTest();
+        BaseAtomic base = new AtomicLongTest();
         base.execute();
     }
 

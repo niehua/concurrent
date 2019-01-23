@@ -1,21 +1,20 @@
 package niehua.concurrent.atomic;
 
-import com.mmall.concurrency.annoations.ThreadSafe;
-import com.mmall.concurrency.example.base.BaseConcurrency;
 import lombok.extern.slf4j.Slf4j;
 import niehua.concurrent.annoations.ThreadSafe;
+import niehua.concurrent.base.BaseAtomic;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 @ThreadSafe
-public class AtomicBooleanTest extends BaseConcurrency {
+public class AtomicBooleanTest extends BaseAtomic {
 
     private static AtomicBoolean isHappened = new AtomicBoolean(false);
 
 
     public static void main(String[] args){
-        BaseConcurrency base = new AtomicBooleanTest();
+        BaseAtomic base = new AtomicBooleanTest();
         base.execute();
     }
 
