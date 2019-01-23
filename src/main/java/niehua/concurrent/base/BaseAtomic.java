@@ -1,8 +1,7 @@
 package niehua.concurrent.base;
 
-import com.mmall.concurrency.annoations.NotThreadSafe;
-import com.mmall.concurrency.constant.NumberCons;
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.NotThreadSafe;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -14,7 +13,7 @@ import java.util.concurrent.Semaphore;
  */
 @Slf4j
 @NotThreadSafe
-public abstract class BaseConcurrency {
+public abstract class BaseAtomic {
 
     public void execute(){
         //创建一个可缓存线程池，如果线程池长度超过处理需要，可灵活回收空闲线程，

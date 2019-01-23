@@ -1,8 +1,9 @@
 package niehua.concurrent.atomic;
 
-import com.mmall.concurrency.annoations.ThreadSafe;
+
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.ThreadSafe;
 
 import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
@@ -33,7 +34,7 @@ public class AtomicIntegerFieldUpdaterTest {
 
         if (updater.compareAndSet(example5, 100, 120)) {
             log.info("update success 1, {}", example5.getCount());
-        }else {
+        } else {
             log.info("update failed  1, {}", example5.getCount());
         }
 
