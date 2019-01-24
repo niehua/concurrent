@@ -3,10 +3,7 @@ package niehua.concurrent.aqs;
 import lombok.extern.slf4j.Slf4j;
 import niehua.concurrent.base.BaseCyclicBarrier;
 
-import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 @Slf4j
 public class CyclicBarrierExample1 extends BaseCyclicBarrier {
@@ -19,7 +16,7 @@ public class CyclicBarrierExample1 extends BaseCyclicBarrier {
     }
 
     @Override
-    protected  void race(int threadNum) throws Exception {
+    protected void race(int threadNum) throws Exception {
 
         Thread.sleep(1000);
         log.info("{} is ready", threadNum);

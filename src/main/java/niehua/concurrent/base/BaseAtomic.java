@@ -2,6 +2,7 @@ package niehua.concurrent.base;
 
 import lombok.extern.slf4j.Slf4j;
 import niehua.concurrent.annoations.NotThreadSafe;
+import niehua.concurrent.constant.NumberCons;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
