@@ -1,9 +1,9 @@
 package niehua.concurrent.count;
 
-import com.mmall.concurrency.ConcurrencyTest;
-import com.mmall.concurrency.annoations.ThreadSafe;
-import com.mmall.concurrency.example.base.BaseConcurrency;
+
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.ThreadSafe;
+import niehua.concurrent.base.BaseAtomic;
 
 /*
 synchronized 修正计数类方法
@@ -17,12 +17,12 @@ Atomic: 竞争激烈时能维持常态，比Lock性能好; 只能同步一个值
  */
 @Slf4j
 @ThreadSafe
-public class CountSync extends BaseConcurrency {
+public class CountSync extends BaseAtomic {
 
     public static int count = 0;
 
     public static void main(String[] args){
-        BaseConcurrency base = new ConcurrencyTest();
+        BaseAtomic base = new CountSync();
         base.execute();
     }
 

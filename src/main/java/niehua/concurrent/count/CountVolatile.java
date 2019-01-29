@@ -1,17 +1,17 @@
 package niehua.concurrent.count;
 
-import com.mmall.concurrency.annoations.NotThreadSafe;
-import com.mmall.concurrency.example.base.BaseConcurrency;
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.NotThreadSafe;
+import niehua.concurrent.base.BaseAtomic;
 
 @Slf4j
 @NotThreadSafe
-public class CountVolatile extends BaseConcurrency {
+public class CountVolatile extends BaseAtomic {
 
     public static volatile int count = 0;
 
     public static void main(String[] args){
-        BaseConcurrency base = new CountVolatile();
+        BaseAtomic base = new CountVolatile();
         base.execute();
     }
 

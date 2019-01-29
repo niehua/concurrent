@@ -1,7 +1,7 @@
 package niehua.concurrent.count;
 
-import com.mmall.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
+import niehua.concurrent.annoations.NotThreadSafe;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
